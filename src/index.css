@@ -1,13 +1,46 @@
-body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --ink: #1a1a1a;
+  --paper: #f5f2eb;
+  --card: #fffefb;
+  --rule: #d8d2c4;
+  --muted: #8a8070;
+  --accent: #c94a2a;
+  --correct: #2a7a4a;
+  --wrong: #c94a2a;
+  --shadow: rgba(0, 0, 0, 0.07);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  background-image: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 27px,
+      var(--rule) 27px,
+      var(--rule) 28px);
+  background-attachment: fixed;
+}
+
+button {
+  font-family: "Ubuntu", sans-serif;
+  cursor: pointer;
+}
+
+input {
+  font-family: "Ubuntu", sans-serif;
 }

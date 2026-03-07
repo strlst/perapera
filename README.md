@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# エンジニア語彙 · technically correct
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple engineer vocabulary flashcard app.  
+This project builds on a dataset published by a kind developer at @mercari, a bilingual engineer vocabulary list, in order to try out a Bun/React/Typescript stack in the form of a simple demo.
 
-## Available Scripts
+Data Source: [mercari/engineer-vocabulary-list](https://github.com/mercari/engineer-vocabulary-list)
 
-In the project directory, you can run:
+## Setup
 
-### `npm start`
+Requires [bun](https://bun.sh).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```sh
+bun install    # install dependencies
+bun dev        # dev server at http://localhost:5173
+bun run build  # production build into dist/
+bun start      # serve the production build at http://localhost:4173
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+src/
+  App.module.css              layout styles
+  App.tsx                     app shell, data fetching, queue state
+  components/
+    VocabCard.module.css      card styles
+    VocabCard.tsx             card ui
+  index.css                   global reset + css variables
+  main.tsx                    entry point
+  types.ts                    shared typescript types
+  vocab.ts                    csv sources, parser, helpers
+index.html
+vite.config.ts
+tsconfig.json
+package.json
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## AI Disclaimer
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project has been developed using Claude Sonnet 4.6 in order to gain familiarity with AI tools, which are getting increasingly capable and useful.

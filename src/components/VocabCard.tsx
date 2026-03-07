@@ -18,11 +18,23 @@ export default function VocabCard({ card, index, total, mode, onCorrect, onWrong
     const [status, setStatus] = useState<AnswerStatus>("idle");
     const [anim, setAnim] = useState<"shake" | "pop" | null>(null);
     const inputRef = useRef<HTMLInputElement>(null);
+    const cardRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         setValue("");
         setStatus("idle");
         setAnim(null);
+
+        // trigger slide-in by toggling the class on the real DOM node
+        // this avoids any React re-render being involved in the animation lifecycle
+        const el = cardRef.current;
+        if (el) {
+            el.classList.remove(styles.cardEnter);
+            // force reflow so removing+adding the class is seen as a fresh animation
+            void el.offsetWidth;
+            el.classList.add(styles.cardEnter);
+        }
+
         setTimeout(() => inputRef.current?.focus(), 50);
     }, [card]);
 
@@ -69,7 +81,7 @@ export default function VocabCard({ card, index, total, mode, onCorrect, onWrong
     ].filter(Boolean).join(" ");
 
     return (
-        <div className={cardClass}>
+        <div ref={cardRef} className={cardClass}>
             <span className={styles.counter}>{index + 1} / {total}</span>
 
             <p className={styles.badge}>

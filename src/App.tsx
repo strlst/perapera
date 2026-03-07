@@ -134,7 +134,6 @@ export default function App() {
                     {!done && queue[cursor] && (
                         <div className={styles.cardWrap}>
                             <VocabCard
-                                key={cursor}
                                 card={queue[cursor]}
                                 index={cursor}
                                 total={total}

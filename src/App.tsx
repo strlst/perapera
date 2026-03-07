@@ -75,9 +75,9 @@ export default function App() {
         <div className={styles.app}>
             <header className={styles.header}>
                 <h1 className={styles.title}>
-                    エンジニア<span className={styles.accent}>語彙</span>
+                    ペラ<span className={styles.accent}>ペラ</span>
                 </h1>
-                <p className={styles.subtitle}>engineer vocabulary · practice</p>
+                <p className={styles.subtitle}>エンジニア語彙 · 練習</p>
             </header>
 
             {loading && (

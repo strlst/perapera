@@ -1,6 +1,6 @@
-# エンジニア語彙 · technically correct
+# ペラペラ (perapera)
 
-A simple engineer vocabulary flashcard app.  
+A simple engineer vocabulary (エンジニア語彙) flashcard app.  
 This project builds on a dataset published by a kind developer at @mercari, a bilingual engineer vocabulary list, in order to try out a Bun/React/Typescript stack in the form of a simple demo.
 
 Data Source: [mercari/engineer-vocabulary-list](https://github.com/mercari/engineer-vocabulary-list)

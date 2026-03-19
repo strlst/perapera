@@ -16,6 +16,10 @@ bun run build  # production build into dist/
 bun start      # serve the production build at http://localhost:4173
 ```
 
+## Demo
+
+![Screenshot showcasing ペラペラ](demo.png)
+
 ## Project Structure
 
 ```

@@ -1,239 +1,246 @@
 .card {
-  width: 100%;
-  background: var(--card);
-  border: 1.5px solid var(--rule);
-  border-radius: 4px;
-  padding: 40px 44px 32px;
-  box-shadow: 0 2px 16px var(--shadow), 4px 4px 0 var(--rule);
-  position: relative;
-  will-change: transform;
-  transform: translateZ(0);
+    width: 100%;
+    background: var(--card);
+    border: 1.5px solid var(--rule);
+    border-radius: 4px;
+    padding: 40px 44px 32px;
+    box-shadow: 0 2px 16px var(--shadow), 4px 4px 0 var(--rule);
+    position: relative;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .cardEnter {
-  animation: slideIn 0.28s ease both;
+    animation: slideIn 0.28s ease both;
 }
 
 @keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .shake {
-  animation: shake 0.38s ease both;
+    animation: shake 0.38s ease both;
 }
 
 @keyframes shake {
 
-  0%,
-  100% {
-    transform: translateX(0) translateZ(0);
-  }
+    0%,
+    100% {
+        transform: translateX(0) translateZ(0);
+    }
 
-  20% {
-    transform: translateX(-7px) translateZ(0);
-  }
+    20% {
+        transform: translateX(-7px) translateZ(0);
+    }
 
-  40% {
-    transform: translateX(7px) translateZ(0);
-  }
+    40% {
+        transform: translateX(7px) translateZ(0);
+    }
 
-  60% {
-    transform: translateX(-4px) translateZ(0);
-  }
+    60% {
+        transform: translateX(-4px) translateZ(0);
+    }
 
-  80% {
-    transform: translateX(4px) translateZ(0);
-  }
+    80% {
+        transform: translateX(4px) translateZ(0);
+    }
 }
 
 .pop {
-  animation: pop 0.25s ease both;
+    animation: pop 0.25s ease both;
 }
 
 @keyframes pop {
-  0% {
-    transform: scale(1) translateZ(0);
-  }
+    0% {
+        transform: scale(1) translateZ(0);
+    }
 
-  50% {
-    transform: scale(1.016) translateZ(0);
-  }
+    50% {
+        transform: scale(1.016) translateZ(0);
+    }
 
-  100% {
-    transform: scale(1) translateZ(0);
-  }
+    100% {
+        transform: scale(1) translateZ(0);
+    }
 }
 
 .counter {
-  position: absolute;
-  top: 16px;
-  right: 20px;
-  font-size: 1rem;
-  letter-spacing: 0.04em;
-  color: var(--muted);
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
 }
 
 .badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 1rem;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
-  color: var(--muted);
-  margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+    color: var(--muted);
+    margin-bottom: 20px;
 }
 
 .dot {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
 }
 
 .word {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
-  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  margin-bottom: 8px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
 }
 
 .wordJp {
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 400;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
 }
 
 .furi {
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 1rem;
-  font-weight: 300;
-  color: var(--muted);
-  margin-bottom: 16px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--muted);
+    margin-bottom: 16px;
 }
 
 .example {
-  font-size: 1rem;
-  font-style: italic;
-  color: var(--muted);
-  line-height: 1.75;
-  border-top: 1px solid var(--rule);
-  padding-top: 14px;
-  margin-top: 6px;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.75;
+    border-top: 1px solid var(--rule);
+    padding-top: 14px;
+    margin-top: 6px;
 }
 
 .inputRow {
-  display: flex;
-  gap: 10px;
-  margin-top: 28px;
-  width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 28px;
+    width: 100%;
 }
 
 .input {
-  flex: 1;
-  min-width: 0;
-  font-size: 1rem;
-  padding: 10px 14px;
-  border: 1.5px solid var(--rule);
-  border-radius: 3px;
-  background: var(--paper);
-  color: var(--ink);
-  outline: none;
-  transition: border-color 0.15s;
+    flex: 1;
+    min-width: 0;
+    font-size: 1rem;
+    padding: 10px 14px;
+    border: 1.5px solid var(--rule);
+    border-radius: 3px;
+    background: var(--paper);
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.15s;
 }
 
 .input:focus {
-  border-color: var(--ink);
+    border-color: var(--ink);
 }
 
 .inputCorrect {
-  border-color: var(--correct);
-  background: #f0faf4;
+    border-color: var(--correct);
+    background: #f0faf4;
 }
 
 .inputWrong {
-  border-color: var(--wrong);
-  background: #fdf2f0;
+    border-color: var(--wrong);
+    background: #fdf2f0;
 }
 
 .submitBtn {
-  flex-shrink: 0;
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: lowercase;
-  padding: 10px 22px;
-  border: 1.5px solid var(--ink);
-  border-radius: 3px;
-  background: var(--ink);
-  color: var(--paper);
-  white-space: nowrap;
-  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+    flex-shrink: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+    padding: 10px 22px;
+    border: 1.5px solid var(--ink);
+    border-radius: 3px;
+    background: var(--ink);
+    color: var(--paper);
+    white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s, transform 0.1s;
 }
 
 .submitBtn:hover {
-  background: var(--accent);
-  border-color: var(--accent);
+    background: var(--accent);
+    border-color: var(--accent);
 }
 
 .submitBtn:active {
-  transform: scale(0.97);
+    transform: scale(0.97);
 }
 
 .feedback {
-  min-height: 1.5em;
-  margin-top: 14px;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: transparent;
+    min-height: 1.5em;
+    margin-top: 14px;
+    font-size: 1rem;
+    color: transparent;
+}
+
+.wrongFeedback {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wrongLabel {
+    font-size: 1rem;
 }
 
 .feedback_correct {
-  color: var(--correct);
+    color: var(--correct);
 }
 
 .feedback_wrong {
-  color: var(--wrong);
+    color: var(--wrong);
 }
 
 .feedbackWord {
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 500;
-  font-size: 1rem;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
 }
 
 .actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
 }
 
 .ghostBtn {
-  font-size: 1rem;
-  letter-spacing: 0.04em;
-  text-transform: lowercase;
-  padding: 6px 12px;
-  border: 1px solid var(--rule);
-  border-radius: 3px;
-  background: transparent;
-  color: var(--muted);
-  transition: border-color 0.15s, color 0.15s;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+    padding: 6px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: transparent;
+    color: var(--muted);
+    transition: border-color 0.15s, color 0.15s;
 }
 
 .ghostBtn:hover {
-  border-color: var(--ink);
-  color: var(--ink);
+    border-color: var(--ink);
+    color: var(--ink);
 }

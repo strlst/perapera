@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { AnswerStatus, Mode, Word } from "../types";
 import { normalise } from "../vocab";
+import RubyText from "./RubyText";
 import styles from "./VocabCard.module.css";
 
 interface Props {
@@ -25,12 +26,9 @@ export default function VocabCard({ card, index, total, mode, onCorrect, onWrong
         setStatus("idle");
         setAnim(null);
 
-        // trigger slide-in by toggling the class on the real DOM node
-        // this avoids any React re-render being involved in the animation lifecycle
         const el = cardRef.current;
         if (el) {
             el.classList.remove(styles.cardEnter);
-            // force reflow so removing+adding the class is seen as a fresh animation
             void el.offsetWidth;
             el.classList.add(styles.cardEnter);
         }
@@ -70,9 +68,11 @@ export default function VocabCard({ card, index, total, mode, onCorrect, onWrong
     };
 
     const question = mode === "en -> ja" ? card.english : card.japanese;
-    const answer = mode === "en -> ja" ? card.japanese : card.english;
     const isJpPrompt = mode === "ja -> en";
     const placeholder = mode === "en -> ja" ? "日本語で入力…" : "type in english…";
+
+    // for wrong feedback: show ruby if we're in en->ja mode and have furigana, else plain text
+    const showRubyAnswer = mode === "en -> ja" && !!card.japaneseFuri;
 
     const cardClass = [
         styles.card,
@@ -92,10 +92,6 @@ export default function VocabCard({ card, index, total, mode, onCorrect, onWrong
             <p className={`${styles.word} ${isJpPrompt ? styles.wordJp : ""}`}>
                 {question}
             </p>
-
-            {isJpPrompt && card.japaneseFuri && (
-                <p className={styles.furi}>{card.japaneseFuri}</p>
-            )}
 
             {!isJpPrompt && card.exampleEN && (
                 <p className={styles.example}>"{card.exampleEN}"</p>
@@ -129,12 +125,22 @@ export default function VocabCard({ card, index, total, mode, onCorrect, onWrong
                 </button>
             </div>
 
-            <p className={`${styles.feedback} ${status !== "idle" ? styles[`feedback_${status}`] : ""}`}>
-                {status === "correct" && "✓ correct!"}
-                {status === "wrong" && (
-                    <>✗ answer: <span className={styles.feedbackWord}>{answer}</span></>
+            <div className={`${styles.feedback} ${status !== "idle" ? styles[`feedback_${status}`] : ""}`}>
+                {status === "correct" && (
+                    <span>✓ correct!</span>
                 )}
-            </p>
+                {status === "wrong" && (
+                    <span className={styles.wrongFeedback}>
+                        <span className={styles.wrongLabel}>✗ answer:</span>
+                        {showRubyAnswer
+                            ? <RubyText furi={card.japaneseFuri} />
+                            : <span className={styles.feedbackWord}>
+                                {mode === "en -> ja" ? card.japanese : card.english}
+                            </span>
+                        }
+                    </span>
+                )}
+            </div>
 
             <div className={styles.actions}>
                 <button className={styles.ghostBtn} onClick={onSkip}>

@@ -1,0 +1,17 @@
+.ruby {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.2;
+}
+
+.rubyPair {
+    ruby-position: over;
+}
+
+.rubyPair rt {
+    font-size: 0.5em;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+}

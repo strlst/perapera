@@ -23,6 +23,7 @@ export const CSV_FILES = [
     },
 ] as const;
 
+// cannot simply line.split on separater due to nested commas
 function splitCsvLine(line: string): string[] {
     const cols: string[] = [];
     let cur = "";
